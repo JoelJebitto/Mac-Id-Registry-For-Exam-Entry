@@ -1,7 +1,11 @@
+import Content from "./components/Content";
+import Header from "./components/Header";
+
 function App() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">Hello World!</h1>
+    <div className="flex h-screen flex-col">
+      <Header />
+      <Content />
     </div>
   );
 }
