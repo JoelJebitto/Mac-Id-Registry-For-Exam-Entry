@@ -22,7 +22,7 @@ export const SearchBar = () => {
   }, [selectedItem]);
 
   return (
-    <div className="flex flex-row ">
+    <div className="flex flex-row mx-auto">
       <div className="relative inline-block pr-3 text-left" ref={menuRef}>
         <button
           onClick={() => setOpen(!open)}
@@ -47,7 +47,7 @@ export const SearchBar = () => {
         </button>
 
         {open && (
-          <div className="absolute mt-2 w-40 bg-black/50 p-3  rounded-2xl shadow-2xl z-10">
+          <div className="absolute mt-2 w-40 bg-black/95 p-3 border border-gray-900 rounded-2xl shadow-2xl z-10">
             <ul className="rounded-2xl">
               <li
                 className="px-4 py-2 hover:bg-black/50  cursor-pointer"
@@ -79,7 +79,7 @@ export const SearchBar = () => {
         }
         disabled={selectedItem == 0}
         className={
-          "outline-none focus:outline-none focus:ring-0 flex-1 p-5 rounded-4xl shadow-2xl disabled:cursor-not-allowed bg-black/50"
+          "outline-none px-7 focus:outline-none focus:ring-0 w-full  p-5 rounded-4xl shadow-2xl disabled:cursor-not-allowed bg-black/50"
         }
       />
     </div>
