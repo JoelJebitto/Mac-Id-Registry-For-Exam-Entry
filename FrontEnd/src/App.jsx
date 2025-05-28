@@ -1,4 +1,4 @@
-import Content from "./components/Content";
+import Content from "./components/contentPages";
 import Header from "./components/Header";
 
 function App() {
