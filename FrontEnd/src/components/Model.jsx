@@ -15,7 +15,7 @@ export default function Model({ isOpen, onClose, children }) {
   return ReactDOM.createPortal(
     <div
       onClick={onClose}
-      className=" inset-0 text-gray-200 fixed bg-black/40 flex transition-opacity items-center justify-center "
+      className=" inset-0 text-gray-200 fixed bg-black/40 flex transition-opacity items-center justify-center h-screen overflow-auto"
     >
       <div
         onClick={(e) => e.stopPropagation()}
