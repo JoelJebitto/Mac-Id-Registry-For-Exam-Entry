@@ -5,7 +5,7 @@ import { useState } from "react";
 export const SearchBar = () => {
   const [open, setOpen] = useState(false);
   const menuRef = useRef(null);
-  const [selectedItem, setSelectedItem] = useState(0);
+  const [selectedItem, setSelectedItem] = useState(2);
 
   useEffect(() => {
     function handleClickOutside(e) {

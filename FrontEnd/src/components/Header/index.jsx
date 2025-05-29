@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "./Button";
-import Login from "./Login";
+import Login from "../Login";
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   return (
