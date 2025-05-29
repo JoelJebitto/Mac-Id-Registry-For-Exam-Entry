@@ -28,7 +28,9 @@ export const SearchBar = () => {
           onClick={() => setOpen(!open)}
           className="bg-black/50 flex  transition-all text-white p-5 rounded-2xl shadow-2xl"
         >
-          {open && <p className="transition-all hidden sm:block">Search By</p>}
+          {open && (
+            <p className="transition-all hidden sm:flex w-max">Search By</p>
+          )}
 
           <svg
             xmlns="http://www.w3.org/2000/svg"
