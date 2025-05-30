@@ -11,7 +11,7 @@ const WaitingSection = () => {
     setValue("", "");
   };
   return (
-    <div className="flex flex-col my-auto">
+    <div className="flex flex-col flex-1 my-auto">
       <h1 className="text-4xl font-bold m-auto mb-10 ">Your Exam Room</h1>
       <div className="flex flex-col-reverse md:flex-row">
         <div className="bg-black/50 flex flex-col  mx-auto my-3 p-5 m-5 flex-1 h-fit shadow-2xl shadow-gray-900 border-gray-800 border rounded-2xl">
