@@ -2,11 +2,17 @@ import { useRef } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 
-export const SearchBar = () => {
+export const SearchBar = ({ setList, filterByName }) => {
   const [open, setOpen] = useState(false);
   const menuRef = useRef(null);
   const [selectedItem, setSelectedItem] = useState(2);
-
+  const inputText = useRef();
+  const handleInputChange = () => {
+    if (selectedItem == 1) {
+      console.log(filterByName(inputText.current.value));
+      setList(filterByName(inputText.current.value));
+    }
+  };
   useEffect(() => {
     function handleClickOutside(e) {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
@@ -79,6 +85,8 @@ export const SearchBar = () => {
               ? "Search by Room No"
               : "Seclect Category "
         }
+        ref={inputText}
+        onChange={handleInputChange}
         disabled={selectedItem == 0}
         className={
           "outline-none px-7 focus:outline-none focus:ring-0 w-full  p-5 rounded-4xl shadow-2xl disabled:cursor-not-allowed bg-black/50"

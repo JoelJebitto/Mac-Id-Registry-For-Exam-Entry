@@ -24,7 +24,7 @@ export const useRoomStore = create((set, get) => ({
   },
   filterByName: (key) => {
     return get().data?.filter((item) => {
-      item.name.toLowerCase().includes(key.toLowerCase());
+      return item.name.toLowerCase().includes(key.toLowerCase());
     });
   },
 }));
