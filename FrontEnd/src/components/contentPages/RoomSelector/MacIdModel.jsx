@@ -1,6 +1,17 @@
+import { useSelectedRoomStore } from "../../../store/SelectedRoomStore";
 import Model from "../../Model";
-
+import useLocalStorage from "../../../utils/useLocalStorage.js";
 export default function MacIdModel({ isOpen, onClose, data }) {
+  const { setValue } = useSelectedRoomStore();
+  const [macId_, setMacId] = useLocalStorage("macId", "");
+  function isValidMac() {
+    const macRegex = /^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$/;
+    return macRegex.test(macId_);
+  }
+  const onBook = () => {
+    setValue(data.roomNo, macId_);
+    onClose();
+  };
   return (
     <Model isOpen={isOpen} onClose={onClose}>
       <div className="bg-black/60 p-5 rounded-xl shadow-2xl">
@@ -14,7 +25,7 @@ export default function MacIdModel({ isOpen, onClose, data }) {
             </p>
             <p>
               <span className="font-bold text-lg">No : </span>
-              {data.no}
+              {data.roomNo}
             </p>
             <p>
               <span className="font-bold text-lg">Available : </span>{" "}
@@ -37,6 +48,8 @@ export default function MacIdModel({ isOpen, onClose, data }) {
           Mac Id :{" "}
         </label>
         <input
+          value={macId_}
+          onChange={(e) => setMacId(e.target.value)}
           type="text"
           name="macid"
           id="macid"
@@ -44,7 +57,13 @@ export default function MacIdModel({ isOpen, onClose, data }) {
         />
       </div>
       <div className="flex my-5">
-        <button className="flex-1 text-green-500 font-bold  bg-black/60 hover:bg-black/70 p-5 rounded-xl mr-2">
+        <button
+          onClick={isValidMac() ? onBook : () => {}}
+          className={
+            (isValidMac() ? " text-green-500 " : " text-gray-500 ") +
+            "flex-1  font-bold bg-black/60 hover:bg-black/70 p-5 rounded-xl mr-2 "
+          }
+        >
           Book
         </button>
         <button

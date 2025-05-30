@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import api from "../restApi";
 
-export const useRoomStore = create((set) => ({
+export const useRoomStore = create((set, get) => ({
   data: null,
   loading: false,
   error: null,
@@ -17,5 +17,9 @@ export const useRoomStore = create((set) => ({
       set({ error: err.message, loading: false });
     }
   },
-  increment: () => set((s) => ({ count: s.count + 1 })),
+  findRoom: (roomId) => {
+    return get().data?.find((item) => {
+      return item.roomNo === roomId;
+    });
+  },
 }));

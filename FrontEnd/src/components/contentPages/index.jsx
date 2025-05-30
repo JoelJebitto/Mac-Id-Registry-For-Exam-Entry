@@ -1,7 +1,7 @@
 import NotLogedIn from "./NotLogedIn";
 import { RoomSelector } from "./RoomSelector";
 import WaitingSection from "./WaitingSection";
-import { useSelectedRoomStore } from "../../store/selectedRoomStore";
+import { useSelectedRoomStore } from "../../store/SelectedRoomStore";
 
 function Content() {
   const { roomNo } = useSelectedRoomStore();
