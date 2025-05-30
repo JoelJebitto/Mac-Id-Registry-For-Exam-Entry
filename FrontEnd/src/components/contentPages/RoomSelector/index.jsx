@@ -1,5 +1,5 @@
 import RoomList from "./RoomList";
-import { SearchBar } from "./SearchBar";
+import { SearchBar } from "../SearchBar";
 
 export const RoomSelector = () => {
   return (

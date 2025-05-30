@@ -9,11 +9,11 @@ const RoomCard = ({ data }) => {
       <h1 className="text-3xl mb-5 font-bold">{data.name}</h1>
       <p>
         <span className="font-bold text-lg">No : </span>
-        {data.no}
+        {data.roomNo}
       </p>
       <p>
-        <span className="font-bold text-lg">Available : </span> {data.available}
-        /{data.capacity}
+        <span className="font-bold text-lg">Available : </span>
+        {/* {data.available} */}/{data.capacity}
       </p>
       <p>
         <span className="line-clamp-2">
