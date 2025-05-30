@@ -2,15 +2,16 @@ import { useRef } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 
-export const SearchBar = ({ setList, filterByName }) => {
+export const SearchBar = ({ setList, filterByName, filterByNo }) => {
   const [open, setOpen] = useState(false);
   const menuRef = useRef(null);
   const [selectedItem, setSelectedItem] = useState(2);
   const inputText = useRef();
   const handleInputChange = () => {
     if (selectedItem == 1) {
-      console.log(filterByName(inputText.current.value));
       setList(filterByName(inputText.current.value));
+    } else if (selectedItem == 2) {
+      setList(filterByNo(inputText.current.value));
     }
   };
   useEffect(() => {
