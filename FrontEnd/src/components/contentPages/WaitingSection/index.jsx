@@ -3,10 +3,13 @@ import Timer from "./Timer";
 import { useSelectedRoomStore } from "../../../store/SelectedRoomStore";
 import { useRoomStore } from "../../../store/RoomStore";
 const WaitingSection = () => {
-  const { macId, roomNo } = useSelectedRoomStore();
+  const { macId, roomNo, setValue } = useSelectedRoomStore();
   const { findRoom } = useRoomStore();
   const data = findRoom(roomNo);
   console.log(data);
+  const handleCancalBooking = () => {
+    setValue("", "");
+  };
   return (
     <div className="flex flex-col my-auto">
       <h1 className="text-4xl font-bold m-auto mb-10 ">Your Exam Room</h1>
@@ -27,9 +30,15 @@ const WaitingSection = () => {
             <span className="font-bold text-lg">Description :</span>{" "}
             <span className="my-auto">{data.description}</span>
           </p>
-
+          <p>
+            <span className="font-bold text-lg">Your MacId :</span>{" "}
+            <span className="my-auto">{macId}</span>
+          </p>
           <div className=" h-40" />
-          <button className="bg-black/80  p-5 rounded-2xl border border-gray-800 text-red-500">
+          <button
+            onClick={() => handleCancalBooking()}
+            className="bg-black/80  p-5 rounded-2xl border border-gray-800 text-red-500"
+          >
             Cancal Booking
           </button>
         </div>
