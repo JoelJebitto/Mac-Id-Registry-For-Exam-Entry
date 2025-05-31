@@ -12,8 +12,8 @@ const RoomCard = ({ data }) => {
         {data.roomNo}
       </p>
       <p>
-        <span className="font-bold text-lg">Available : </span>
-        {/* {data.available} */}/{data.capacity}
+        <span className="font-bold text-lg">Capacity: </span>
+        {data.capacity}
       </p>
       <p>
         <span className="line-clamp-2">
