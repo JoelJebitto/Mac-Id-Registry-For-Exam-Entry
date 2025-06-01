@@ -6,10 +6,16 @@ export const useRoomStore = create((set, get) => ({
   loading: false,
   error: null,
   fetchData: async () => {
+    const token = localStorage.getItem("token");
     set({ loading: true, error: null });
     try {
       console.log("hi");
-      const res = await fetch(api.rooms);
+      const res = await fetch(api.rooms, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       if (!res.ok) throw new Error("Failed to fetch");
       const json = await res.json();
       set({ data: json, loading: false });
