@@ -1,4 +1,4 @@
-package com.joeljebitto.MacIdRegistryForExamEntry.Security;
+package com.joeljebitto.MacIdRegistryForExamEntry.Dto;
 
 public class AuthResponse {
   private String token;

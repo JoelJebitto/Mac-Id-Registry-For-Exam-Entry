@@ -1,4 +1,4 @@
-package com.joeljebitto.MacIdRegistryForExamEntry.Security;
+package com.joeljebitto.MacIdRegistryForExamEntry.Dto;
 
 public class AuthRequest {
   private String username;

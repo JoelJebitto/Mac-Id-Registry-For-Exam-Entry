@@ -43,8 +43,9 @@ public class SecurityConfig {
     http.csrf().disable()
         .authorizeHttpRequests(auth -> auth
             .requestMatchers("/api/auth/**").permitAll()
-            .requestMatchers("/admin/**").hasRole("ADMIN")
-            .requestMatchers("/student/**").hasRole("STUDENT")
+            .requestMatchers("/api/rooms/**").hasRole("STUDENT")
+            // .requestMatchers("/api/rooms").hasRole("STUDENT")
+            // .requestMatchers("/api/rooms/").hasRole("STUDENT")
             .requestMatchers("/teacher/**").hasRole("TEACHER")
             .anyRequest().authenticated())
         .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

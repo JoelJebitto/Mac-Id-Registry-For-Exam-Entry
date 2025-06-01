@@ -26,5 +26,4 @@ public class RoomService {
   public Optional<Room> getRoomById(String roomNo) {
     return roomRepository.findById(roomNo);
   }
-
 }
