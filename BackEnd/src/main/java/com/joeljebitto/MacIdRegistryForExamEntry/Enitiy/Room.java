@@ -2,7 +2,13 @@ package com.joeljebitto.MacIdRegistryForExamEntry.Enitiy;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 
 @Entity
@@ -19,7 +25,8 @@ public class Room {
 
   private String description;
 
-  // Getters and setters
+  @OneToMany(mappedBy = "exams", cascade = CascadeType.ALL, orphanRemoval = true)
+  private List<Exams> exams = new ArrayList<>();
 
   public String getRoomNo() {
     return roomNo;
@@ -53,10 +60,11 @@ public class Room {
     this.description = description;
   }
 
-  @Override
-  public String toString() {
-    return "Room [roomNo=" + roomNo + ", name=" + name + ", capacity=" + capacity + ", description=" + description
-        + "]";
+  public List<Exams> getExams() {
+    return exams;
   }
 
+  public void setExams(List<Exams> exams) {
+    this.exams = exams;
+  }
 }

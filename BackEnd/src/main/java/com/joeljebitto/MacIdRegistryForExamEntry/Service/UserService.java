@@ -16,7 +16,15 @@ public class UserService implements UserDetailsService {
 
   @Autowired
   private UserRepository userRepository;
+
+  @Autowired
   private PasswordEncoder passwordEncoder;
+
+  @Autowired
+  public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+    this.userRepository = userRepository;
+    this.passwordEncoder = passwordEncoder;
+  }
 
   public User saveUser(User user) {
     user.setPassword(passwordEncoder.encode(user.getPassword()));
@@ -31,6 +39,6 @@ public class UserService implements UserDetailsService {
     return new org.springframework.security.core.userdetails.User(
         user.getUsername(),
         user.getPassword(),
-        Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + user.getRole().toUpperCase())));
+        Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + user.getRole().name())));
   }
 }

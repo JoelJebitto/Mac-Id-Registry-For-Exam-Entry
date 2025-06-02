@@ -4,7 +4,7 @@ import Model from "./Model";
 import { useUserStore } from "../store/UserStore";
 import { useState } from "react";
 function Alert({ type = "info", message }) {
-  const base = "p-4 mb-10 z-50 rounded-md border-l-4 shadow-md";
+  const base = "p-4 mb-5 z-50 rounded-md border-l-4 shadow-md";
   const styles = {
     success: "bg-green-100 text-green-800 border-green-500",
     error: "bg-red-100 text-red-800 border-red-500",

@@ -14,6 +14,7 @@ import com.joeljebitto.MacIdRegistryForExamEntry.Dto.AuthRequest;
 import com.joeljebitto.MacIdRegistryForExamEntry.Dto.AuthResponse;
 import com.joeljebitto.MacIdRegistryForExamEntry.Dto.RegisterRequest;
 import com.joeljebitto.MacIdRegistryForExamEntry.Enitiy.User;
+import com.joeljebitto.MacIdRegistryForExamEntry.Enitiy.Enum.Role;
 import com.joeljebitto.MacIdRegistryForExamEntry.Security.JwtUtil;
 import com.joeljebitto.MacIdRegistryForExamEntry.Service.UserService;
 
@@ -49,6 +50,7 @@ public class AuthController {
   }
 
   // Register Endpoint
+
   @PostMapping("/register")
   public ResponseEntity<String> register(@RequestBody RegisterRequest request) {
     if (userRepository.findByUsername(request.getUsername()).isPresent()) {
@@ -58,7 +60,7 @@ public class AuthController {
     User user = new User();
     user.setUsername(request.getUsername());
     user.setPassword(passwordEncoder.encode(request.getPassword()));
-    user.setRole(request.getRole().toUpperCase());
+    user.setRole(Role.valueOf(request.getRole().toUpperCase())); // <-- Fix here
 
     userRepository.save(user);
 
