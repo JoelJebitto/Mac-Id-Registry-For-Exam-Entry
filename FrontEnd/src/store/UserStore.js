@@ -1,26 +1,34 @@
 // store.js
 import { create } from "zustand";
-import jwtDecode from "jwt-decode";
+import * as jwt_decode from "jwt-decode";
 export const useUserStore = create((set, get) => ({
   username: "",
   role: "",
+  exp: null,
   decodeToken: () => {
     const token = localStorage.getItem("token");
-    const decoded = jwtDecode(token);
-    set({ userName: decoded["username"], role: decoded["role"] });
+    if (!token) return;
+    const decoded = jwt_decode.jwtDecode(token);
+    set({
+      userName: decoded["username"],
+      role: decoded["role"],
+      exp: decoded["exp"],
+    });
+  },
+  logout: () => {
+    localStorage.removeItem("token");
+    set({
+      userName: "",
+      role: "",
+      exp: null,
+    });
   },
   isTokenExpired: () => {
-    const token = get().token;
-    if (!token) return true;
-
     try {
-      const { exp } = jwtDecode(token); // `exp` is in seconds
       const currentTime = Date.now() / 1000;
-      return exp < currentTime;
-    } catch (e) {
+      return get().exp < currentTime;
+    } catch {
       return true;
     }
   },
-  count: 0,
-  increase: () => set((state) => ({ count: state.count + 1 })),
 }));
