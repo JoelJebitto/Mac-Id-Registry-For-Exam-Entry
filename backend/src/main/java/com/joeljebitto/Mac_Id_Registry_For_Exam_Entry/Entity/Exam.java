@@ -1,10 +1,10 @@
-package com.joeljebitto.MacIdRegistryForExamEntry.Enitiy;
+package com.joeljebitto.Mac_Id_Registry_For_Exam_Entry.Entity;
 
 import java.time.Duration;
 import java.time.LocalTime;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.joeljebitto.MacIdRegistryForExamEntry.Enitiy.Enum.ExamStatus;
+import com.joeljebitto.Mac_Id_Registry_For_Exam_Entry.Entity.Enum.ExamStatus;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -16,14 +16,14 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-public class Exams {
+public class Exam {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
   @ManyToOne
-  @JoinColumn(name = "user")
+  @JoinColumn(name = "user_username")
   private User user;
 
   private String title;
@@ -41,7 +41,7 @@ public class Exams {
   private LocalTime endTime;
 
   @ManyToOne
-  @JoinColumn(name = "room")
+  @JoinColumn(name = "roomno")
   private Room room;
 
   public Long getId() {
