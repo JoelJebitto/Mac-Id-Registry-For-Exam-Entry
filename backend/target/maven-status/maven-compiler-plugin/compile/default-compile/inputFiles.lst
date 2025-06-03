@@ -1,6 +1,13 @@
+/home/joeljebitto/workspace/07-Project/Mac-Id-Registry-For-Exam-Entry/backend/src/main/java/com/joeljebitto/Mac_Id_Registry_For_Exam_Entry/Config/SecurityConfig.java
+/home/joeljebitto/workspace/07-Project/Mac-Id-Registry-For-Exam-Entry/backend/src/main/java/com/joeljebitto/Mac_Id_Registry_For_Exam_Entry/Dao/UserRepository.java
 /home/joeljebitto/workspace/07-Project/Mac-Id-Registry-For-Exam-Entry/backend/src/main/java/com/joeljebitto/Mac_Id_Registry_For_Exam_Entry/Entity/Enum/ExamStatus.java
 /home/joeljebitto/workspace/07-Project/Mac-Id-Registry-For-Exam-Entry/backend/src/main/java/com/joeljebitto/Mac_Id_Registry_For_Exam_Entry/Entity/Enum/Role.java
 /home/joeljebitto/workspace/07-Project/Mac-Id-Registry-For-Exam-Entry/backend/src/main/java/com/joeljebitto/Mac_Id_Registry_For_Exam_Entry/Entity/Exam.java
 /home/joeljebitto/workspace/07-Project/Mac-Id-Registry-For-Exam-Entry/backend/src/main/java/com/joeljebitto/Mac_Id_Registry_For_Exam_Entry/Entity/Room.java
 /home/joeljebitto/workspace/07-Project/Mac-Id-Registry-For-Exam-Entry/backend/src/main/java/com/joeljebitto/Mac_Id_Registry_For_Exam_Entry/Entity/User.java
 /home/joeljebitto/workspace/07-Project/Mac-Id-Registry-For-Exam-Entry/backend/src/main/java/com/joeljebitto/Mac_Id_Registry_For_Exam_Entry/MacIdRegistryForExamEntryApplication.java
+/home/joeljebitto/workspace/07-Project/Mac-Id-Registry-For-Exam-Entry/backend/src/main/java/com/joeljebitto/Mac_Id_Registry_For_Exam_Entry/Rest/AuthController.java
+/home/joeljebitto/workspace/07-Project/Mac-Id-Registry-For-Exam-Entry/backend/src/main/java/com/joeljebitto/Mac_Id_Registry_For_Exam_Entry/Service/UserDetailsService.java
+/home/joeljebitto/workspace/07-Project/Mac-Id-Registry-For-Exam-Entry/backend/src/main/java/com/joeljebitto/Mac_Id_Registry_For_Exam_Entry/Service/UserDetailsServiceImpl.java
+/home/joeljebitto/workspace/07-Project/Mac-Id-Registry-For-Exam-Entry/backend/src/main/java/com/joeljebitto/Mac_Id_Registry_For_Exam_Entry/Utils/JwtFilter.java
+/home/joeljebitto/workspace/07-Project/Mac-Id-Registry-For-Exam-Entry/backend/src/main/java/com/joeljebitto/Mac_Id_Registry_For_Exam_Entry/Utils/JwtUtil.java
