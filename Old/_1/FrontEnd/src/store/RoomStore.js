@@ -9,7 +9,6 @@ export const useRoomStore = create((set, get) => ({
     const token = localStorage.getItem("token");
     set({ loading: true, error: null });
     try {
-      console.log("hi");
       const res = await fetch(api.rooms, {
         method: "GET",
         headers: {
